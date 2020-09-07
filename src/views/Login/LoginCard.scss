@@ -1,0 +1,15 @@
+.login-modal {
+  text-align: center;
+  padding: 40px;
+  width: 100%;
+  box-sizing: border-box;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin-top: 16px;
+    }
+  }
+}

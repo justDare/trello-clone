@@ -1,0 +1,28 @@
+.register-dialog {
+  .app-bar {
+    position: relative;
+  }
+  .dialog-content {
+    max-width: 100%;
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .register-card {
+      padding: 40px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      button {
+        margin-top: 16px;
+      }
+    }
+  }
+}

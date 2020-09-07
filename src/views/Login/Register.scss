@@ -1,0 +1,11 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  padding-top: 48px;
+  width: 100%;
+
+  .need-account {
+    border-bottom: 1px solid grey;
+    text-align: center;
+  }
+}
