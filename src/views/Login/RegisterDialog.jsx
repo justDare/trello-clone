@@ -26,10 +26,7 @@ export default function RegisterDialog(props) {
   const [passwordMatchError, setPasswordMatchError] = useState(false);
 
   useEffect(() => {
-    if (
-      passwordMatchError &&
-      formFields.password === formFields.confirm_password
-    )
+    if (formFields.password === formFields.confirm_password)
       setPasswordMatchError(false);
   }, [formFields]);
 
