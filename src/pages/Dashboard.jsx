@@ -1,5 +1,11 @@
 import React from 'react';
 
+import Appbar from '../views/Dashboard/Appbar';
+
 export default function Dashboard(props) {
-  return <div>Welcome to the dashboard!</div>;
+  return (
+    <div>
+      <Appbar />
+    </div>
+  );
 }

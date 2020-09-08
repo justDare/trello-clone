@@ -22,7 +22,7 @@ export default function Register(props) {
         Need an account?
       </Typography>
       <Button variant="contained" color="default" onClick={openRegisterDialog}>
-        Register
+        Create An Account
       </Button>
       <RegisterDialog open={dialogOpen} handleClose={closeRegisterDialog} />
     </div>

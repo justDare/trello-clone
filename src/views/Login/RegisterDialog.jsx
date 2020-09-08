@@ -19,6 +19,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function RegisterDialog(props) {
   const [formFields, setFormFields] = useState({
+    name: '',
     email: '',
     password: '',
     confirm_password: '',
@@ -68,11 +69,21 @@ export default function RegisterDialog(props) {
         </Toolbar>
       </AppBar>
       <DialogContent className="dialog-content">
-        <Paper className="register-card">
+        <Paper className="register-card" variant="outlined">
           <Typography variant="h3" gutterBottom>
             Register
           </Typography>
           <form onSubmit={(e) => handleRegister(e)}>
+            <TextField
+              name="name"
+              label="Name"
+              type="text"
+              variant="outlined"
+              required={true}
+              margin="normal"
+              value={formFields.name}
+              onChange={handleFormChange}
+            />
             <TextField
               name="email"
               label="Email"
