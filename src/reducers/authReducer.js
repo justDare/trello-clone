@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGOUT, LOAD_USER } from '../types';
+import { LOGIN_SUCCESS, LOGOUT, LOAD_USER, REGISTER_SUCCESS } from '../types';
 
 const initialState = {
   user: null,
@@ -9,6 +9,7 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case LOGIN_SUCCESS:
+    case REGISTER_SUCCESS:
       localStorage.setItem('token', action.payload.token);
       return {
         ...state,

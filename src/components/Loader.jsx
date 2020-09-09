@@ -16,7 +16,7 @@ Loader.defaultProps = {
 
 const useStyles = makeStyles((theme) => ({
   backdrop: {
-    zIndex: 100,
+    zIndex: 10000,
     color: '#fff',
   },
 }));

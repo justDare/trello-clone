@@ -29,15 +29,16 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 200,
         body: JSON.stringify({
-          id: response.ref.id,
-          name: response.data.name,
-          email: response.data.email,
+          user: {
+            id: response.ref.id,
+            name: response.data.name,
+            email: response.data.email,
+          },
           token: token,
         }),
       };
     })
     .catch((error) => {
-      console.log(error);
       /* Error! return the error with statusCode 400 */
       return {
         statusCode: 400,
