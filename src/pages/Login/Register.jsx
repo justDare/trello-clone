@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import React, { useState } from "react";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
-import './Register.scss';
-import RegisterDialog from '../../views/Login/RegisterDialog';
+import "./Register.scss";
+import RegisterDialog from "./RegisterDialog";
 
 export default function Register(props) {
   const [dialogOpen, setDialogOpen] = useState(false);

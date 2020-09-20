@@ -1,13 +1,13 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as actions from './actions';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as actions from "./actions";
 
 // Material
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +29,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Welcome back {name}!

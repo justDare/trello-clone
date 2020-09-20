@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+} from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import PrivateRoute from './components/PrivateRoute';
-import * as actions from './actions';
+import "./App.scss";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import PrivateRoute from "./components/PrivateRoute";
+import * as actions from "./actions";
 
 function App() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);

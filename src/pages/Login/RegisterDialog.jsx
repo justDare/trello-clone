@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 // Material
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Slide from '@material-ui/core/Slide';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Alert from '@material-ui/lab/Alert';
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Slide from "@material-ui/core/Slide";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import Alert from "@material-ui/lab/Alert";
 
-import './RegisterDialog.scss';
-import Loader from '../../components/Loader';
-import * as actions from './actions';
-import * as commonActions from '../../actions';
+import "./RegisterDialog.scss";
+import Loader from "../../components/Loader";
+import * as actions from "./actions";
+import * as commonActions from "../../actions";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -31,10 +31,10 @@ export default function RegisterDialog(props) {
 
   // Local State
   const [formFields, setFormFields] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirm_password: '',
+    name: "",
+    email: "",
+    password: "",
+    confirm_password: "",
   });
   const [passwordMatchError, setPasswordMatchError] = useState(false);
   const [loadingRegistration, setLoadingRegistration] = useState(false);
@@ -46,9 +46,9 @@ export default function RegisterDialog(props) {
   }, [formFields]);
 
   useEffect(() => {
-    if (error.id === 'REGISTER ERROR') {
+    if (error.id === "REGISTER ERROR") {
       setLoadingRegistration(false);
-      setRegistrationError('This email may be in use.');
+      setRegistrationError("This email may be in use.");
       dispatch(commonActions.clearErrors());
     }
   }, [error, dispatch]);
@@ -148,7 +148,7 @@ export default function RegisterDialog(props) {
                   Registration error — {registrationError}
                 </Alert>
               ) : (
-                ''
+                ""
               )}
             </form>
           </Paper>

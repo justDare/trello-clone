@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as commonActions from '../../actions';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 // Material
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Alert from '@material-ui/lab/Alert';
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Alert from "@material-ui/lab/Alert";
 
-import './LoginCard.scss';
-import * as actions from './actions';
-import Loader from '../../components/Loader';
+import "./LoginCard.scss";
+import * as actions from "./actions";
+import * as commonActions from "../../actions";
+import Loader from "../../components/Loader";
 
 export default function LoginCard(props) {
   // Redux
@@ -19,14 +19,14 @@ export default function LoginCard(props) {
   const error = useSelector((state) => state.error);
 
   // Local State
-  const [formFields, setFormFields] = useState({ email: '', password: '' });
+  const [formFields, setFormFields] = useState({ email: "", password: "" });
   const [loadingLogin, setLoadingLogin] = useState(false);
-  const [loginError, setLoginError] = useState('');
+  const [loginError, setLoginError] = useState("");
 
   useEffect(() => {
-    if (error.id === 'LOGIN ERROR') {
+    if (error.id === "LOGIN ERROR") {
       setLoadingLogin(false);
-      setLoginError('Invalid credentials.');
+      setLoginError("Invalid credentials.");
       dispatch(commonActions.clearErrors());
     }
   }, [error, dispatch]);
@@ -78,7 +78,7 @@ export default function LoginCard(props) {
           {loginError ? (
             <Alert severity="error">Login error — {loginError}</Alert>
           ) : (
-            ''
+            ""
           )}
         </form>
       </Paper>
