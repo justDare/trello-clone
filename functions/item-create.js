@@ -3,23 +3,23 @@ const q = faunadb.query;
 const middy = require("middy");
 const authMiddleware = require("./utils/authMiddleware");
 
-const createList = (event, context, callback) => {
+const createItem = (event, context, callback) => {
     const client = new faunadb.Client({
         secret: process.env.FAUNADB_SERVER_SECRET,
     });
 
-    console.log("Function `list-create` invoked");
+    console.log("Function `item-create` invoked");
 
     /* parse the string body into a useable JS object */
     const data = JSON.parse(event.body);
 
-    const list = {
-        data: { ...data, user_id: event.user.id },
+    const item = {
+        data: { ...data, done: false, list_id: event.headers["list_id"] },
     };
 
     /* construct the fauna query */
     return client
-        .query(q.Create(q.Ref("classes/lists"), list))
+        .query(q.Create(q.Ref("classes/items"), item))
         .then((response) => {
             /* Success! return the response with statusCode 200 */
             return {
@@ -36,4 +36,4 @@ const createList = (event, context, callback) => {
         });
 };
 
-exports.handler = middy(createList).use(authMiddleware());
+exports.handler = middy(createItem).use(authMiddleware());

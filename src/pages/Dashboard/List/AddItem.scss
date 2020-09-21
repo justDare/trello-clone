@@ -1,0 +1,7 @@
+form.add-item {
+    display: flex;
+
+    .MuiFormControl-root {
+        flex-grow: 1;
+    }
+}

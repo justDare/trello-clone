@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
   const hashed_password = await bcrypt.hash(data.password, 10);
 
   const user = {
-    data: { ...data, password: hashed_password },
+    data: { name: data.name, email: data.email, password: hashed_password },
   };
 
   return client
